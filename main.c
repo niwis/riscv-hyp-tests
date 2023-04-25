@@ -64,15 +64,18 @@ bool check_misa_h(){
 }
 
 void main(){
-
+    bool ret = true;
     INFO("risc-v hypervisor extensions tests");
 
     if(check_misa_h()){
         reset_state();
         for(int i = 0; i < test_table_size; i++)
-            test_table[i]();
+            ret = ret && test_table[i]();
     }
 
     INFO("end");
-    exit(0);
+    if(ret)
+        exit(0);
+    else
+        exit(1);
 }
