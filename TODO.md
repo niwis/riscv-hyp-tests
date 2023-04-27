@@ -1,0 +1,2 @@
+- [ ] lr.w causes SPF instead of LPF
+- [ ] second_stage_only_translation fails for LOG_INFO

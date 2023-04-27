@@ -2,7 +2,7 @@
 .section .boot, "ax" 
 .globl _boot
 _boot:
-    bnez a0, .
+    # bnez a0, .
     csrwi    sscratch, 0xf
     /* Initialize stack pointer */
     la sp, __stack_top
